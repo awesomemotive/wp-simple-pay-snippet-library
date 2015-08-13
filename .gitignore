@@ -1,0 +1,56 @@
+### IDE ###
+
+# PhpStorm
+.idea
+
+# Netbeans
+nbproject
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+### Development ###
+
+# Node
+/node_modules
+
+# Bower
+/bower_components
+
+# Composer
+/vendor
+/composer.lock
+
+# Sass
+.sass-cache
+
+# Tests
+phpunit.xml
+
+# Logging
+*.log
+*.logs
+/log
+/logs
+*.tmp
+temp
+tmp
+
+### Builds ###
+
+# wordpress.org
+/build
+/svn
+
+### OS Files ###
+
+# OSX
+.DS_Store
+
+# Windows
+ehthumbs.db
+Thumbs.db
