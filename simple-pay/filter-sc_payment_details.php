@@ -1,0 +1,135 @@
+<?php
+
+function sc_payment_details_example( $html, $charge_response ) {
+    // This is copied from the original output so that we can just add in our own details
+    $html = '<div class="sc-payment-details-wrap">';
+
+    $html .= '<p>' . __( 'Congratulations. Your payment went through!', 'sc' ) . '</p>' . "\n";
+
+    if( ! empty( $charge_response->description ) ) {
+        $html .= '<p>' . __( "Here's what you bought:", 'sc' ) . '</p>';
+        $html .= $charge_response->description . '<br>' . "\n";
+    }
+
+    if ( isset( $_GET['store_name'] ) && ! empty( $_GET['store_name'] ) ) {
+        $html .= 'From: ' . esc_html( $_GET['store_name'] ) . '<br/>' . "\n";
+    }
+
+    $html .= '<br><strong>' . __( 'Total Paid: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' .
+        strtoupper( $charge_response->currency ) . '</strong>' . "\n";
+
+    $html .= '<p>Your transaction ID is: ' . $charge_response->id . '</p>';
+    //Our own new details
+    // Let's add the last four of the card they used and the expiration date
+    $html .= '<p>Card: ****-****-****-' . $charge_response->card->last4 . '<br>';
+    $html .= 'Expiration: ' . $charge_response->card->exp_month . '/' . $charge_response->card->exp_year . '</p>';
+
+    $html .= '</div>';
+
+    return $html;
+}
+add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
+
+
+// Hide the payment details message
+function sc_payment_details_example( $html, $charge ) {
+    return '';
+}
+add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
+
+
+function sc_payment_details_example( $html, $charge_response ) {
+    // This is copied from the original output so that we can just add in our own details
+    $html = '<div class="sc-payment-details-wrap">';
+
+    $html .= '<p>' . __( 'Congratulations. Your payment went through!', 'sc' ) . '</p>' . "\n";
+
+    if( ! empty( $charge_response->description ) ) {
+        $html .= '<p>' . __( "Here's what you bought:", 'sc' ) . '</p>';
+        $html .= $charge_response->description . '<br>' . "\n";
+    }
+
+    if ( isset( $_GET['store_name'] ) && ! empty( $_GET['store_name'] ) ) {
+        $html .= 'From: ' . esc_html( $_GET['store_name'] ) . '<br/>' . "\n";
+    }
+
+    $html .= '<br><strong>' . __( 'Total Paid: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' .
+        strtoupper( $charge_response->currency ) . '</strong>' . "\n";
+
+    $html .= '<p>Your transaction ID is: ' . $charge_response->id . '</p>';
+
+    //Our own new details
+    // Let's add the last four of the card they used and the expiration date
+    $html .= '<p>Card: ****-****-****-' . $charge_response->card->last4 . '<br>';
+    $html .= 'Expiration: ' . $charge_response->card->exp_month . '/' . $charge_response->card->exp_year . '</p>';
+
+    // We can show the Address provided - this requires shipping="true" in our shortcode
+    if( ! empty( $charge_response->card->address_line1 ) ) {
+        $html .= '<p>Address Line 1: ' . $charge_response->card->address_line1 . '</p>';
+    }
+
+    if( ! empty( $charge_response->card->address_line2 ) ) {
+        $html .= '<p>Address Line 2: ' . $charge_response->card->address_line2 . '</p>';
+    }
+
+    if( ! empty( $charge_response->card->address_city ) ) {
+        $html .= '<p>Address City: ' . $charge_response->card->address_city . '</p>';
+    }
+
+    if( ! empty( $charge_response->card->address_state ) ) {
+        $html .= '<p>Address State: ' . $charge_response->card->address_state . '</p>';
+    }
+
+    if( ! empty( $charge_response->card->address_zip ) ) {
+        $html .= '<p>Address Zip: ' . $charge_response->card->address_zip . '</p>';
+    }
+
+    // Finally we can add the output of a custom field
+    // For our example shortcode: [stripe_text id="phone_number" label="Phone Number"]
+    if( ! empty( $charge_response->metadata->phone_number ) ) {
+        $html .= '<p>Phone Number: ' . $charge_response->metadata->phone_number . '</p>';
+    }
+
+    $html .= '</div>';
+
+    return $html;
+}
+add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
+
+
+function sc_payment_details_example( $html, $charge_response ) {
+    // This is copied from the original output so that we can just add in our own details
+    $html = '<div class="sc-payment-details-wrap">';
+
+    $html .= '<p>' . __( 'Congratulations. Your payment went through!', 'sc' ) . '</p>' . "\n";
+
+    if( ! empty( $charge_response->description ) ) {
+        $html .= '<p>' . __( "Here's what you bought:", 'sc' ) . '</p>';
+        $html .= $charge_response->description . '<br>' . "\n";
+    }
+
+    if ( isset( $_GET['store_name'] ) && ! empty( $_GET['store_name'] ) ) {
+        $html .= 'From: ' . esc_html( $_GET['store_name'] ) . '<br/>' . "\n";
+    }
+
+    $html .= '<br><strong>' . __( 'Total Paid: ', 'sc' ) . sc_stripe_to_formatted_amount( $charge_response->amount, $charge_response->currency ) . ' ' .
+        strtoupper( $charge_response->currency ) . '</strong>' . "\n";
+
+    $html .= '<p>Your transaction ID is: ' . $charge_response->id . '</p>';
+
+    //Our own new details
+    // Let's add the last four of the card they used and the expiration date
+    $html .= '<p>Card: ****-****-****-' . $charge_response->card->last4 . '<br>';
+    $html .= 'Expiration: ' . $charge_response->card->exp_month . '/' . $charge_response->card->exp_year . '</p>';
+
+    $html .= '<p>Address Line 1: ' . $charge_response->card->address_line1 . '</p>';
+    $html .= '<p>Address Line 2: ' . $charge_response->card->address_line2 . '</p>';
+    $html .= '<p>Address City: ' . $charge_response->card->address_city . '</p>';
+    $html .= '<p>Address State: ' . $charge_response->card->address_state . '</p>';
+    $html .= '<p>Address Zip: ' . $charge_response->card->address_zip . '</p>';
+
+    $html .= '</div>';
+
+    return $html;
+}
+add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
