@@ -1,5 +1,7 @@
 <?php
 
+// This filter changes the base URL. If you are looking to change the query args of the URL we recommend you see sc_redirect_args
+
 // Example #1
 function sc_redirect_example( $url ) {
 
@@ -10,18 +12,3 @@ function sc_redirect_example( $url ) {
     return add_query_arg( 'show_related', 'true', $url );
 }
 add_filter( 'sc_redirect', 'sc_redirect_example' );
-
-
-// Example #2
-function sc_redirect_example( $url, $failed ) {
-
-    // Check if the transaction failed and act accordingly
-    // In this example we add a query arg 'utm_campaign=failed_transaction' to let us find out
-    // how many failed transactions we are getting using a web traffic analytics site.
-    if( $failed ) {
-        return add_query_arg( 'utm_campaign', 'failed_transaction', $url );
-    }
-
-    return $url;
-}
-add_filter( 'sc_redirect', 'sc_redirect_example', 10, 2 );
