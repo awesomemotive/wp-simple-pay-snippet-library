@@ -1,5 +1,7 @@
 <?php
 
+// For chare response info see: https://stripe.com/docs/api#charge_object
+
 // Add additional arguments to pass along with the redirect
 // Uses the current args being passed (you should try to avoid modifying these) and passes the charge as well
 // This example shows a way to add the customer id as a query arg so that it will append &cust_id=12345 to the success URL.

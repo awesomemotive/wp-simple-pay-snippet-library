@@ -1,5 +1,7 @@
 <?php
 
+// For charge response info see: https://stripe.com/docs/api#charge_object
+
 // Example #1 - Add a simple output of the last 4 of the credit card and the expiration date
 function sc_payment_details_example( $html, $charge_response ) {
     // This is copied from the original output so that we can just add in our own details
