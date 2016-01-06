@@ -1,6 +1,6 @@
 <?php
 
-// For chare response info see: https://stripe.com/docs/api#charge_object
+// For charge response info see: https://stripe.com/docs/api#charge_object
 
 // Add additional arguments to pass along with the redirect
 // Uses the current args being passed (you should try to avoid modifying these) and passes the charge as well
