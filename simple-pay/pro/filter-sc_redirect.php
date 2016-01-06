@@ -2,7 +2,6 @@
 
 // This filter changes the base URL. If you are looking to change the query args of the URL we recommend you see sc_redirect_args
 
-// Example #
 // This example takes a value from a custom field and then returns the URL accordingly
 // This example uses the following shortcode:
 // [stripe amount="5900"]
