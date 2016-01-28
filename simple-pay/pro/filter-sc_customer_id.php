@@ -1,29 +1,24 @@
 <?php
 
 /**
- * Retrieve existing Stripe customer by customer ID in POST variables for use in charge.
- * This overrides the new customer created for each charge.
+ * Retrieve existing Stripe customer ID in POST variables for use in charge.
  */
 
-function sc_custom_stripe_customer() {
-
-	$customer = array();
+function sc_custom_customer_id() {
 
 	if ( isset( $_POST['sc_customer_id'] ) && ! empty( $_POST['sc_customer_id'] ) ) {
-
-		$customer_id = $_POST['sc_customer_id'];
-		$customer    = \Stripe\Customer::retrieve( $customer_id );
+		return $_POST['sc_customer_id'];
+	} else {
+		return null;
 	}
-
-	return $customer;
 }
 
-add_filter( 'sc_payment_customer', 'sc_custom_stripe_customer' );
+add_filter( 'sc_customer_id', 'sc_custom_customer_id' );
 
-// Customer ID from variable stored in hidden field for testing sc_payment_customer().
+// Customer ID from variable stored in hidden field for use in sc_custom_customer_id().
 
 function sc_custom_before_payment_button( $html ) {
-	$current_customer_id = 'cus_7nGvrqUv2oEuGf'; // Set customer ID in code.
+	$current_customer_id = 'cus_7nkiC7URE1cCzj'; // Set customer ID in code.
 
 	$html = '<input type="hidden" id="sc_customer_id" name="sc_customer_id" value="' . $current_customer_id . '" />';
 
