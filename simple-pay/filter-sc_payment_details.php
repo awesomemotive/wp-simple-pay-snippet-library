@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Note: If using with Subscriptions, increase the priority number in add_filter() to override the default subscriptions
+ * payment details output.
+ * i.e. add_filter( 'sc_payment_details', 'sc_payment_details_example', 20, 2 );
+ */
+
+
 // For charge response info see: https://stripe.com/docs/api#charge_object
 
 // Example #1 - Add a simple output of the last 4 of the credit card and the expiration date
@@ -31,8 +38,9 @@ function sc_payment_details_example( $html, $charge_response ) {
 
     return $html;
 }
-add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
 
+// Increase priority number 10 here if using with Subscriptions.
+add_filter( 'sc_payment_details', 'sc_payment_details_example', 10, 2 );
 
 // Example #2 - Hide the payment details message
 function sc_payment_details_example( $html, $charge ) {
