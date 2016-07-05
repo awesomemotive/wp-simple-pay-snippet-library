@@ -10,16 +10,25 @@ function simpay_dequeue_scripts_styles() {
 	// Replace with conditional logic you require.
 	// Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
 	if ( ! is_single( 'payment-page' ) ) {
-
-		// Dequeue scripts & styles in Simple Pay Pro.
+		
+		// Dequeue plugin scripts.
+		wp_dequeue_script( 'stripe-checkout' );
+		wp_dequeue_script( 'stripe-checkout-pro-accounting' );
+		wp_dequeue_script( 'stripe-checkout-pro-parsley' );
+		wp_dequeue_script( 'stripe-checkout-pro-moment' );
+		wp_dequeue_script( 'stripe-checkout-pro-pikaday' );
+		wp_dequeue_script( 'stripe-checkout-pro-pikaday-jquery' );
 		wp_dequeue_script( 'stripe-checkout-pro-public' );
+		wp_dequeue_script( 'stripe-subscriptions-public' ); // If Subscriptions add-on active.
+
+		// Dequeue plugin styles.
+		wp_dequeue_style( 'stripe-checkout-button' );
+		wp_dequeue_style( 'stripe-checkout-pro-pikaday' );
+		wp_dequeue_style( 'stripe-checkout-pro-public-lite' );
 		wp_dequeue_style( 'stripe-checkout-pro-public' );
 
-		// Dequeue scripts & styles in Subscriptions add-on.
-		wp_dequeue_script( 'stripe-subscriptions-public' );
-
-		// Dequeue styles in Simple Pay Lite (checkout.js is inline).
-		//wp_dequeue_style( 'stripe-checkout-lite-public' );
+		// Comment out above and uncomment below if using WP Simple Pay Lite.
+		//wp_dequeue_style( 'stripe-checkout-public-lite' );
 	}
 }
 
