@@ -6,10 +6,10 @@
 
 function simpay_dequeue_scripts_styles() {
 
-	// In this example, Simple Pay scripts & styles are dequeued on all pages except the one with the slug "payment-page".
+	// In this example, Simple Pay scripts & styles are dequeued on all posts and pages except the PAGE with the slug "payment-page".
 	// Replace with conditional logic you require.
 	// Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
-	if ( ! is_single( 'payment-page' ) ) {
+	if ( ! is_page( 'payment-page' ) ) {
 		
 		// Dequeue plugin scripts.
 		wp_dequeue_script( 'stripe-checkout' );
