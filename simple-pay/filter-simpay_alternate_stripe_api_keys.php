@@ -1,6 +1,7 @@
 <?php
 
 // Use alternate Stripe accounts (API keys) on specific pages.
+// Get this as a single file custom plugin at https://github.com/moonstonemedia/WP-Simple-Pay-Library/blob/master/custom-plugins/wp-simple-pay-alternate-stripe-api-keys.php
 
 function simpay_alt_stripe_api_secret_key( $secret_key, $test_mode ) {
 
