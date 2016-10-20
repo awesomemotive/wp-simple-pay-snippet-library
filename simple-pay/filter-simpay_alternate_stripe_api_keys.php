@@ -23,19 +23,19 @@ function simpay_alt_stripe_api_secret_key( $secret_key, $test_mode ) {
 }
 add_filter( 'simpay_secret_key', 'simpay_alt_stripe_api_secret_key', 10, 2 );
 
-function simpay_alt_stripe_api_publishable_key( $secret_key, $test_mode ) {
+function simpay_alt_stripe_api_publishable_key( $publishable_key, $test_mode ) {
 
 	// Match conditional check from simpay_alt_stripe_api_secret_key().
 	if ( is_page( 'alt-payment-page' ) ) {
 		if ( true == $test_mode ) {
-			$secret_key = 'pk_test_XXX';
+			$publishable_key = 'pk_test_XXX';
 		} else {
-			$secret_key = 'pk_live_XXX';
+			$publishable_key = 'pk_live_XXX';
 		}
 	}
 
 	// Repeat if using even more Stripe accounts.
 
-	return $secret_key;
+	return $publishable_key;
 }
 add_filter( 'simpay_publishable_key', 'simpay_alt_stripe_api_publishable_key', 10, 2 );
