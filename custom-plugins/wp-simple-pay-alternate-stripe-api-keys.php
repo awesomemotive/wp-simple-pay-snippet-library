@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: WP Simple Pay - Alternate Stripe API Keys
- * Description: **SITENAME.com Custom Plugin** Use alternate Stripe accounts (API keys) on specific pages.
+ * Description: [Custom Plugin for SITENAME.com] Use alternate Stripe accounts (API keys) on specific pages.
  */
 
 function simpay_alt_stripe_api_secret_key( $secret_key, $test_mode ) {
