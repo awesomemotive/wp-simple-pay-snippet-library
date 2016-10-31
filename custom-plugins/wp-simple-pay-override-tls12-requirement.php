@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: WP Simple Pay - Override TLS 1.2 requirement.
- * Description: [Custom Plugin for SITENAME.com] Override TLS 1.2 requirement by Stripe.
+ * Description: Override TLS 1.2 requirement by Stripe.
  */
 
 // See https://github.com/stripe/stripe-php#ssl--tls-compatibility-issues
