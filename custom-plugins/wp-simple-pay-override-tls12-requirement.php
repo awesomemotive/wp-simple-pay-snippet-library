@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: WP Simple Pay - Override TLS 1.2 requirement.
+ * Plugin Name: WP Simple Pay - Override TLS 1.2 requirement
  * Description: Override TLS 1.2 requirement by Stripe.
  */
 
@@ -12,4 +12,5 @@ function simpay_override_tls12_requirement() {
 		\Stripe\ApiRequestor::setHttpClient( $curl );
 	}
 }
-add_action( 'init', 'simpay_override_tls12_requirement', 1, 0 );
+
+add_action( 'simpay_stripe_php_loaded', 'simpay_override_tls12_requirement' );
