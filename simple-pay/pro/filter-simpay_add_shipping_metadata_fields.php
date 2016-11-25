@@ -1,8 +1,12 @@
 <?php
 
+/**
+ * Plugin Name: WP Simple Pay - Add Shipping Metadata Fields
+ * Description: Add shipping data to metadata fields.
+ */
+
 // Add shipping data back to metadata fields (in addition to shipping property on Stripe charge object).
 // This was being done using POST variables prior to WP Simple Pay Pro 2.5.2.
-// Utilizes the sc_meta_values filter hook.
 
 function simpay_add_shipping_metadata_fields( $meta ) {
 
