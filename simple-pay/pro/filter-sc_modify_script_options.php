@@ -22,3 +22,21 @@ function sc_modify_script_options_example_2( $options ) {
     return $options;
 }
 add_filter( 'sc_modify_script_options', 'sc_modify_script_options_example_2' );
+
+/**
+ * Example 3: Add a tax to the total
+ */
+function sc_modify_script_options_example_3( $options ) {
+
+	// Get our amount
+	$amount = $options['script']['amount'];
+
+	// Calculate a 10% tax and add it to the amount
+	$amount = $amount + ( $amount * .10 );
+
+	// Now update the amount and return back all of the options
+	$options['script']['amount'] = $amount;
+
+	return $options;
+}
+add_filter( 'sc_modify_script_options', 'sc_modify_script_options_example_3' );
