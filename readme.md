@@ -1,3 +1,2 @@
-WP Simple Pay Library
+WP Simple Pay Code Snippet Library
 ==================
-
