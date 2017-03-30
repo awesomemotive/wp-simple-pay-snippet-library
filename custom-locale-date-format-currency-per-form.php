@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Custom locale, date format and currency settings per form.
+ * Plugin Name: WP Simple Pay - Custom locale, date format and currency settings per form
  * Plugin URI: https://wpsimplepay.com
  * Description: Custom locale, date format, currency, currency position and decimal/thousands separator.
  * Version: 1.0

@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Replace Translatable Text
+ * Plugin Name: WP Simple Pay - Replace translatable text
  * Plugin URI: https://wpsimplepay.com
  * Description: Replace translatable text strings in WP Simple Pay.
  * Version: 1.0
