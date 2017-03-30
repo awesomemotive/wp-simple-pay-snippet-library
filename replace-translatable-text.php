@@ -18,10 +18,10 @@ function simpay_custom_replace_text( $translated_text, $untranslated_text, $doma
 
 		switch ( $untranslated_text ) {
 			case 'Apply' :
-				$translated_text = __( 'Apply Coupon', 'stripe' );
+				$translated_text = __( 'Apply Coupon', 'simple-pay' );
 				break;
 			case 'remove' :
-				$translated_text = __( 'remove coupon', 'stripe' );
+				$translated_text = __( 'remove coupon', 'simple-pay' );
 				break;
 		}
 	}
