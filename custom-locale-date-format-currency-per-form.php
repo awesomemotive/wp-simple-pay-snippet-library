@@ -8,8 +8,6 @@
 
 /**
  * In this example, we'll change all these settings to French/Euro for a specific form.
- *
- * Replace XXX in filter names to your form ID.
  */
 
 /**
@@ -20,7 +18,7 @@
 function simpay_custom_locale() {
 	return 'fr';
 }
-add_filter( 'simpay_form_XXX_locale', 'simpay_custom_locale' );
+add_filter( 'simpay_form_130_locale', 'simpay_custom_locale' ); // Replace 130 with your own form ID
 
 /**
  * Apply form date filter
@@ -32,7 +30,7 @@ add_filter( 'simpay_form_XXX_locale', 'simpay_custom_locale' );
 function simpay_custom_date_format() {
 	return 'yy/mm/dd';
 }
-add_filter( 'simpay_form_XXX_date_format', 'simpay_custom_date_format' );
+add_filter( 'simpay_form_130_date_format', 'simpay_custom_date_format' ); // Replace 130 with your own form ID
 
 /**
  * Apply the form currency filter
@@ -42,7 +40,7 @@ add_filter( 'simpay_form_XXX_date_format', 'simpay_custom_date_format' );
 function simpay_custom_currency() {
 	return 'EUR';
 }
-add_filter( 'simpay_form_XXX_currency', 'simpay_custom_currency' );
+add_filter( 'simpay_form_130_currency', 'simpay_custom_currency' ); // Replace 130 with your own form ID
 
 /**
  * Apply the form currency position filter to set the currency symbol to the right side.
@@ -58,7 +56,7 @@ add_filter( 'simpay_form_XXX_currency', 'simpay_custom_currency' );
 function simpay_custom_currency_position() {
 	return 'right';
 }
-add_filter( 'simpay_form_XXX_currency_position', 'simpay_custom_currency_position' );
+add_filter( 'simpay_form_130_currency_position', 'simpay_custom_currency_position' ); // Replace 130 with your own form ID
 
 /**
  * Apply the form thousand separator filter to switch our thousands to a decimal point.
@@ -68,7 +66,7 @@ add_filter( 'simpay_form_XXX_currency_position', 'simpay_custom_currency_positio
 function simpay_custom_thousand_separator() {
 	return '.';
 }
-add_filter( 'simpay_form_XXX_thousand_separator', 'simpay_custom_thousand_separator' );
+add_filter( 'simpay_form_130_thousand_separator', 'simpay_custom_thousand_separator' ); // Replace 130 with your own form ID
 
 
 /**
@@ -79,4 +77,4 @@ add_filter( 'simpay_form_XXX_thousand_separator', 'simpay_custom_thousand_separa
 function simpay_custom_decimal_separator() {
 	return ',';
 }
-add_filter( 'simpay_form_XXX_decimal_separator', 'simpay_custom_decimal_separator' );
+add_filter( 'simpay_form_130_decimal_separator', 'simpay_custom_decimal_separator' ); // Replace 130 with your own form ID
