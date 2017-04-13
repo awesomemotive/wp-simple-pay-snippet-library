@@ -23,7 +23,7 @@ add_filter( 'simpay_form_130_locale', 'simpay_custom_locale' ); // Replace 130 w
 /**
  * Apply form date filter
  *
- * Date formatting options: TODO link to jQuery page
+ * Date formatting options: http://api.jqueryui.com/datepicker/#utility-formatDate
  *
  * @return string
  */
