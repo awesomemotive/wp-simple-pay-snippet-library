@@ -11,9 +11,9 @@
  *
  * Note: Does not work for subscription charges.
  */
-function simpay_add_percent_fee() {
+function simpay_custom_add_fee_percent() {
 	// Needs to return the fee percent
 	return 10; // This translates to 10 percent, so a form at $10.00 will now be $11.00
 }
-add_filter( 'simpay_fee_percent', 'simpay_add_percent_fee' );
+add_filter( 'simpay_fee_percent', 'simpay_custom_add_fee_percent' );
 

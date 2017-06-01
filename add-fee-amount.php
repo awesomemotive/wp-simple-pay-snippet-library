@@ -11,9 +11,9 @@
  *
  * Note: Does not work for subscription charges.
  */
-function simpay_add_amount_fee() {
+function simpay_custom_add_fee_amount() {
 	// Needs to return the additional amount IN CENTS
 	return 300; // This will be an additional 3.00
 }
-add_filter( 'simpay_fee_amount', 'simpay_add_amount_fee' );
+add_filter( 'simpay_fee_amount', 'simpay_custom_add_fee_amount' );
 
