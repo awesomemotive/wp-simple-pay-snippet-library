@@ -31,7 +31,7 @@ function simpay_custom_alternate_secret_key( $key, $test_mode ) {
 	// If we are not on the specific page we just return the default key found in the admin settings
 	return $key;
 }
-add_filter( 'simpay_secret_key', 'simpay_custom_alternate_secret_key' );
+add_filter( 'simpay_secret_key', 'simpay_custom_alternate_secret_key', 10, 2 );
 
 // Change the live keys based on the page found and what mode we are in
 function simpay_custom_alternate_publishable_key( $key, $test_mode  ) {
@@ -54,5 +54,5 @@ function simpay_custom_alternate_publishable_key( $key, $test_mode  ) {
 	// If we are not on the specific page we just return the default key found in the admin settings
 	return $key;
 }
-add_filter( 'simpay_publishable_key', 'simpay_custom_alternate_publishable_key' );
+add_filter( 'simpay_publishable_key', 'simpay_custom_alternate_publishable_key', 10, 2 );
 
