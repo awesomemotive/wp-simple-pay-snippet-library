@@ -16,7 +16,7 @@ function simpay_custom_send_email_on_subscription( $subscription, $customer ) {
 	$email = $customer->email;
 
 	$to = get_bloginfo( 'admin_email' );
-	$subject = 'New WP Simple Pay Charge';
+	$subject = 'New WP Simple Pay Subscription';
 	$body = sprintf( 'You have just received a subscription signup to %1$s by %2$s on %3$s', $plan_name, $email, $url );
 	$headers = array('Content-Type: text/html; charset=UTF-8');
 
