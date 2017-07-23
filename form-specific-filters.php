@@ -48,6 +48,7 @@ add_filter( 'simpay_form_157_amount', 'simpay_custom_form_157_amount' );
  * date_format
  * currency
  * currency_position
+ * tax_percent
  * decimal_separator
  * thousand_separator
  * payment_button_style
