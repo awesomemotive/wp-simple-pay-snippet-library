@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Add Fee Amount
+ * Plugin Name: WP Simple Pay - Add Flat Fee Amount
  * Plugin URI: https://wpsimplepay.com
- * Description: Add a fee amount to all of your charges for WP Simple Pay
+ * Description: Add a flat fee amount to all of your charges for WP Simple Pay
  * Version: 1.0
  */
 
 /**
- * In this example, we'll see how to add a fee amount to all forms on the site.
+ * In this example, we'll see how to add a flat fee amount to all forms on the site.
  *
  * Note: Does not work for subscription charges.
  */
