@@ -2,12 +2,12 @@
 /**
  * Plugin Name: WP Simple Pay - Add Fee Percent
  * Plugin URI: https://wpsimplepay.com
- * Description: Add a fee percent to all of your charges for WP Simple Pay
+ * Description: Add a fee percent to all of your one-time payment charges for WP Simple Pay
  * Version: 1.0
  */
 
 /**
- * In this example, we'll see how to add a fee percent to all forms on the site.
+ * In this example, we'll see how to add a fee percent to all one-time payment forms on the site.
  *
  * Note: Does not work for subscription charges.
  */
