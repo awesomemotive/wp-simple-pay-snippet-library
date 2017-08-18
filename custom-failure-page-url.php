@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Simple Pay - Failure Page URLs
  * Plugin URI: https://wpsimplepay.com
- * Description: Change the failure page URLs for specific forms for WP Simple Pay
+ * Description: Change the failure page URLs for WP Simple Pay
  * Version: 1.0
  */
 

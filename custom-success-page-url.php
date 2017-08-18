@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Simple Pay - Success Page URLs
  * Plugin URI: https://wpsimplepay.com
- * Description: Change the success page URLs for specific forms for WP Simple Pay
+ * Description: Change the success page URLs for WP Simple Pay
  * Version: 1.0
  */
 
