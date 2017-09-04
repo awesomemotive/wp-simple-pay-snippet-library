@@ -23,5 +23,5 @@ function simpay_custom_send_email_on_subscription( $subscription, $customer ) {
 	wp_mail( $to, $subject, $body, $headers );
 
 }
-add_action( 'simpay_subscription_created', 'simpay_custom_send_email_on_charge', 10, 2 );
+add_action( 'simpay_subscription_created', 'simpay_custom_send_email_on_subscription', 10, 2 );
 
