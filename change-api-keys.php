@@ -9,7 +9,6 @@
 /**
  * In this example, we'll see how to change the Stripe API keys for a form on a specific page
  *
- * NOTE: You cannot use 2 forms with different API keys on the same page.
  */
 
 // Change the secret keys based on the page found and what mode we are in
