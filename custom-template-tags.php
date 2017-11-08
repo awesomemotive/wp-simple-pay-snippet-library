@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Simple Pay - Custom Template Tags
  * Plugin URI: https://wpsimplepay.com
- * Description: Add your own custom template tags for use with the payment details output.
+ * Description: Add your own custom template tags for use with the payment confirmation messages.
  * Version: 1.0
  */
 
