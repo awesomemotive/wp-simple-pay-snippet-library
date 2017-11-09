@@ -7,7 +7,8 @@
  */
 
 /**
- * In this example, we'll see how to change the custom amount field to type="number"
+ * In this example, we'll see how to change the custom amount field to type="number".
+ * Default "tel" input type brings up number pad but does not allow decimal entry on mobile browsers.
  */
 function simpay_custom_change_amount_field() {
 
