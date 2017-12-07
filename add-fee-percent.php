@@ -7,8 +7,9 @@
  */
 
 /**
- * In this example, we'll see how to add a fee percent to a specific one-time payment form (id: 157) on the site.
+ * In this example, we'll see how to add a fee percent to a specific one-time payment form on the site.
  *
+ * Replace 157 with the form ID to target.
  * Note: Does not work for subscription charges.
  */
 function simpay_custom_form_157_fee_percent() {

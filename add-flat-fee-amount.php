@@ -19,8 +19,9 @@ add_filter( 'simpay_fee_amount', 'simpay_custom_add_fee_amount' );
 
 
 /**
- * In this example, we'll see how to add a flat fee amount to a specific one-time payment form (id: 157) on the site.
+ * In this example, we'll see how to add a flat fee amount to a specific one-time payment form on the site.
  *
+ * Replace 157 with the form ID to target.
  * Note: Does not work for subscription charges.
  */
 function simpay_custom_form_157_fee_amount() {
