@@ -1,3 +1,5 @@
+/* global jQuery */
+
 /**
  * Customize client-side form validation messages.
  *
@@ -5,13 +7,18 @@
  * How to add JavaScript to WordPress: https://docs.wpsimplepay.com/articles/adding-custom-javascript/
  */
 
-// Replace '#simpay-157-text-1' with the form element ID to target.
-jQuery( document.body ).on( 'simpayFormValidationInitialized', function( event, spFormElem ) {
+(function( $ ) {
+	'use strict';
 
-	jQuery( '#simpay-157-text-1' ).rules( 'add', {
-		messages: {
-			required: 'My custom required message.'
-		}
-	});
+	// Replace '#simpay-157-text-1' with the form element ID to target.
+	$( document.body ).on( 'simpayFormValidationInitialized', function( event, spFormElem ) {
 
-} );
+		$( '#simpay-157-text-1' ).rules( 'add', {
+			messages: {
+				required: 'My custom required message.'
+			}
+		} );
+
+	} );
+
+}( jQuery ));
