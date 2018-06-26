@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Simple Pay - Add Flat Fee Amount
  * Plugin URI: https://wpsimplepay.com
- * Description: Add a flat fee amount to one-time payment forms for WP Simple Pay.
+ * Description: Add a flat fee amount to one-time payment forms.
  * Version: 1.0
  */
 

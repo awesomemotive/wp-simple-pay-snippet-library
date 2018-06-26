@@ -1,14 +1,17 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Add Percent Fee (non-global)
+ * Plugin Name: WP Simple Pay - Add Percent Fee
  * Plugin URI: https://wpsimplepay.com
- * Description: Add a percent fee to specific one-time payment forms for WP Simple Pay.
+ * Description: Add a percent fee to one-time payment forms.
  * Version: 1.0
  */
 
 /**
- * Add a percent fee to a specific one-time payment form that's separate from the global
- * tax rate percentage value.
+ * Add a percent fee to a specific one-time payment form in addition to the
+ * global tax percent.
+ *
+ * TODO: Does this add to global tax percent instead of override?
+ * TODO: Are tax amount & total amount labels correct?
  *
  * Replace 157 with the form ID to target.
  * Note: Does not work for subscription charges.
