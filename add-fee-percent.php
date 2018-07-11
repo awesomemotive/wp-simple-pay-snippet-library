@@ -10,9 +10,6 @@
  * Add a percent fee to a specific one-time payment form in addition to the
  * global tax percent.
  *
- * TODO: Does this add to global tax percent instead of override?
- * TODO: Are tax amount & total amount labels correct?
- *
  * Replace 157 with the form ID to target.
  * Note: Does not work for subscription charges.
  */
