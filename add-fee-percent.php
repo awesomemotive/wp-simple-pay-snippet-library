@@ -7,8 +7,8 @@
  */
 
 /**
- * Add a percent fee to a specific one-time payment form in addition to the
- * global tax percent.
+ * Add a percent fee to a specific one-time payment form in addition
+ * (and prior to) to the global or form TAX percent.
  *
  * Replace 157 with the form ID to target.
  * Note: Does not work for subscription charges.
