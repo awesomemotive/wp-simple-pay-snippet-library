@@ -13,10 +13,7 @@
 		if ( 90 === formData.formId ) {
 
 			// Set email from textbox
-			formData.stripeParams.description = 'Custom item description';
-
-			// Set item description from dropdown
-			formData.stripeParams.description = spFormElem.find( '#simpay-90-text-1' ).val();
+			formData.stripeParams.email = spFormElem.find( '#simpay-90-text-1' ).val();
 		}
 	} );
 
