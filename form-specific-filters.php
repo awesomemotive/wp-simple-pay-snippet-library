@@ -15,27 +15,36 @@
  * change these settings with form specific filters so that you can control one form separately from the other forms
  * on your website.
  *
- * The format for adding a form specific filter is like this:
+ * The format for adding a form-specific filter hook is as follows:
  *
  * simpay_form_{form_id}_{setting}
  *
  * Using that formula we can change the amount of the form ID 157 by using a filter like this:
- *
- * simpay_form_157_amount
- *
- * And the whole filter would look like the function below
  */
 
-function simpay_custom_form_157_amount() {
-
-	// Change the amount to $5.00
-	return 5.00;
+function simpay_custom_amount() {
+	return 40.00;
 }
-add_filter( 'simpay_form_157_amount', 'simpay_custom_form_157_amount' );
 
+// Replace number in filter hook name with specific form ID.
+add_filter( 'simpay_form_157_amount', 'simpay_custom_amount' );
 
 /**
- * List of available settings for the _{setting} suffix of the formula explained above:
+ * The format for adding a filter hook that applies to all forms is as follows:
+ *
+ * simpay_{setting}
+ *
+ * Example:
+ */
+
+function simpay_custom_amount_all_forms() {
+	return 50.00;
+}
+
+add_filter( 'simpay_amount', 'simpay_custom_amount_all_forms' );
+
+/**
+ * List of available settings for the _{setting} suffix of the formulas explained above:
  *
  * test_mode
  * test_secret_key
