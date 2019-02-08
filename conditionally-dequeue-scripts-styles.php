@@ -10,6 +10,11 @@
  * In this example, we'll remove all plugin scripts & styles unless on a specific page with the slug
  * "payment-page". Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
  * Use priority greater than 10 when using with WP Simple Pay Pro.
+ *
+ * ​Please note that this also prevents Stripe.js from loading on the non-payment form pages.
+ * From https://stripe.com/docs/stripe-js/reference#including-stripejs
+ * To best leverage Stripe’s advanced fraud functionality, include this script on every page of your site, not just the checkout page.
+ * This allows Stripe to detect anomalous behavior that may be indicative of fraud as customers browse your website.
  */
 
 // The $scripts parameter is an array of all the scripts that need to be loaded for Simple Pay
