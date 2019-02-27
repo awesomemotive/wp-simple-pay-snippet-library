@@ -1,7 +1,5 @@
 /* global jQuery */
 
-// TODO Currently works with Stripe Checkout forms only.
-
 /**
  * Trigger Custom Overlay or Stripe Checkout forms with Beaver Builder pricing tables via jQuery.
  * Replace number part of the class IDs in CSS & JavaScript with the form IDs to target.
@@ -29,15 +27,15 @@
 
 	$( '.fl-pricing-table-column-0' ).find( '.fl-button' ).click( function( e ) {
 		e.preventDefault();
-		$( '#simpay-100-payment-button' ).click();
+		simpayAppPro.toggleOverlayForm( 100 );
 	} );
 	$( '.fl-pricing-table-column-1' ).find( '.fl-button' ).click( function( e ) {
 		e.preventDefault();
-		$( '#simpay-101-payment-button' ).click();
+		simpayAppPro.toggleOverlayForm( 101 );
 	} );
 	$( '.fl-pricing-table-column-2' ).find( '.fl-button' ).click( function( e ) {
 		e.preventDefault();
-		$( '#simpay-102-payment-button' ).click();
+		simpayAppPro.toggleOverlayForm( 102 );
 	} );
 
 	// Stripe Checkout forms
