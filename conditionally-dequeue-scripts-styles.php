@@ -3,12 +3,12 @@
  * Plugin Name: WP Simple Pay - Conditionally dequeue scripts & styles
  * Plugin URI: https://wpsimplepay.com
  * Description: Conditionally dequeue scripts & styles based on set conditions.
- * Version: 1.0
+ * Version: 1.1
  */
 
 /**
- * In this example, we'll remove all plugin scripts & styles unless on a specific page with the slug
- * "payment-page". Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
+ * In this example, we'll remove all plugin scripts & styles unless in an array of specific pages with the slugs
+ * "payment-page", "donate", "subscribe". Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
  * Use priority greater than 10 when using with WP Simple Pay Pro.
  *
  * ​Please note that this also prevents Stripe.js from loading on the non-payment form pages.
@@ -19,7 +19,7 @@
 
 // The $scripts parameter is an array of all the scripts that need to be loaded for Simple Pay
 function simpay_custom_remove_scripts( $scripts ) {
-	if ( ! is_page( 'payment-page' ) ) {
+	if ( ! is_page( array( 'payment-page', 'donate', 'subscribe' ) ) ) {
 		// If we don't want to load any scripts then we can just return an empty array.
 		return array();
 	}
@@ -32,7 +32,7 @@ add_filter( 'simpay_before_register_public_scripts', 'simpay_custom_remove_scrip
 
 // The $style parameter is an array of all the styles that need to be loaded for Simple Pay
 function simpay_custom_remove_styles( $styles ) {
-	if ( ! is_page( 'payment-page' ) ) {
+	if ( ! is_page( array( 'payment-page', 'donate', 'subscribe' ) ) ) {
 		// If we don't want to load any styles then we can just return an empty array.
 		return array();
 	}
