@@ -7,7 +7,7 @@
  */
 
 /**
- * In this example, In this example, we remove all plugin scripts & styles unless the current page slug is "payment-page", "donate" or "subscribe". 
+ * In this example, we remove all plugin scripts & styles unless the current page slug is "payment-page", "donate" or "subscribe". 
  * Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
  * Use priority greater than 10 when using with WP Simple Pay Pro.
  *
