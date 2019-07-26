@@ -7,8 +7,8 @@
  */
 
 /**
- * In this example, we'll remove all plugin scripts & styles unless in an array of specific pages with the slugs
- * "payment-page", "donate", "subscribe". Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
+ * In this example, In this example, we remove all plugin scripts & styles unless the current page slug is "payment-page", "donate" or "subscribe". 
+ * Available WP conditional tags: https://codex.wordpress.org/Conditional_Tags
  * Use priority greater than 10 when using with WP Simple Pay Pro.
  *
  * ​Please note that this also prevents Stripe.js from loading on the non-payment form pages.
