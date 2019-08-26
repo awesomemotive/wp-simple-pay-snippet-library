@@ -65,7 +65,7 @@ add_filter( 'simpay_amount', 'simpay_custom_amount_all_forms' );
  * amount_type
  * amount
  * minimum_amount
- * default_amount
+ * _default_amount
  * custom_amount_label
  * statement_descriptor
  * company_name
