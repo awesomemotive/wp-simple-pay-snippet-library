@@ -2,20 +2,20 @@
 /**
  * Plugin Name: WP Simple Pay - Add Cache Exclusion
  * Plugin URI: https://wpsimplepay.com
- * Description: Add a page to exclude from caching
+ * Description: Add a page to exclude from caching.
  * Version: 1.0
  */
 
 /**
- * In this example, we'll see how to exclude a page from caching.
+ * Helps WordPress caching plugins ignore certain pages to be cached.
  *
- * Note: This tells us to set DONOTCACHEPAGE to true and might not work for server side caching systems.
+ * In this example a page with the slug of `custom-confirmation-page` is excluded.
+ *
+ * @param array $uris A list of URIs to attempt to exclude from caching.
+ * @return array
  */
-
 function simpay_custom_add_cache_exclusion( $uris ) {
-
-	// $uris is an array of pages to exclude, so we just add on to the end of it
-	// It uses the slug of the page you want to exclude
+	// Exclude a page such as https://mysite.com/custom-confirmation-page
 	$uris[] = 'custom-confirmation-page';
 
 	return $uris;
