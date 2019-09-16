@@ -4,7 +4,7 @@
  * Plugin URI: https://wpsimplepay.com
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
- * Description: Change the decimal separator using a filter for WP Simple Pay
+ * Description: Change the decimal separator to ,
  * Version: 1.0
  */
 
