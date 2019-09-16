@@ -2,6 +2,8 @@
 /**
  * Plugin Name: WP Simple Pay - Add Cache Exclusion
  * Plugin URI: https://wpsimplepay.com
+ * Author: Sandhills Development, LLC
+ * Author URI: https://sandhillsdev.com
  * Description: Add a page to exclude from caching.
  * Version: 1.0
  */
