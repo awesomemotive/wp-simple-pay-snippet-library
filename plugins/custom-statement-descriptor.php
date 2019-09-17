@@ -1,25 +1,24 @@
 <?php
 /**
-* Plugin Name: WP Simple Pay - Custom statement descriptors
-* Plugin URI: https://wpsimplepay.com
-* Description: Custom statement descriptors for WP Simple Pay
-* Version: 1.0
-*/
-
-/**
-* In this example, we'll see how to change the statement descriptor for one-time payment forms.
- *
- * Note: Does not work for subscription charges.
-*/
-
-/**
- * Form-specific statement description filter.
- * The new statement descriptor for this example will return the site name.
- *
- * < > ' " are illegal characters and will automatically be stripped out.
- * Maximum length for the description is 22 characters.
+ * Plugin Name: WP Simple Pay - Custom Statement Descriptor
+ * Plugin URI: https://wpsimplepay.com
+ * Author: Sandhills Development, LLC
+ * Author URI: https://sandhillsdev.com
+ * Description: Custom statement descriptor.
+ * Version: 1.0
  */
-function simpay_custom_statement_descriptor() {
+
+/**
+ * Adjust the statement descriptor for form 157.
+ *
+ * Replace 157 with the form ID to target.
+ *
+ * @link https://stripe.com/docs/statement-descriptors
+ *
+ * @param string $statement_descriptor Statement descriptor.
+ * @return string
+ */
+function simpay_custom_form_157_statement_descriptor( $statement_descriptor ) {
 	return get_bloginfo( 'name' );
 }
-add_filter( 'simpay_form_150_statement_descriptor', 'simpay_custom_statement_descriptor' ); // Replace 150 with your form ID
+add_filter( 'simpay_form_157_statement_descriptor', 'simpay_custom_form_157_statement_descriptor' );
