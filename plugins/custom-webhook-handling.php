@@ -2,18 +2,24 @@
 /**
  * Plugin Name: WP Simple Pay - Custom Webhook Handling
  * Plugin URI: https://wpsimplepay.com
+ * Author: Sandhills Development, LLC
+ * Author URI: https://sandhillsdev.com
  * Description: Add handling for additional webhook types.
  * Version: 1.0
  */
 
 /**
- * Add handling for `charge.succeeded` webhook.
+ * Adds handling for `charge.succeeded` webhook.
+ *
+ * @param array $webhooks Registered webhooks.
+ * @return array
  */
-add_filter( 'simpay_webhooks_get_event_whitelist', function( $webhooks ) {
+function simpay_custom_webhooks_get_event_whitelist( $webhooks ) {
 	$webhooks['charge.succeeded'] = '\Custom_Charge_Succeeded_Webhook';
 
 	return $webhooks;
-} );
+}
+add_filter( 'simpay_webhooks_get_event_whitelist', 'simpay_custom_webhooks_get_event_whitelist' );
 
 /**
  * Callback for `charge.succeeded` webook.
