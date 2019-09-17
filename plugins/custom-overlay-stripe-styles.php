@@ -8,17 +8,20 @@
  * Version: 1.0
  */
 
+$form_id  = 11;
+$logo_url = 'https://cdn.worldvectorlogo.com/logos/dribbble-icon-1.svg';
+
 /**
  * Adds logo image to overlay.
  *
  * Replace 157 with the form ID to target.
  */
-function simpay_custom_form_157_overlay_logo() {
-	$image_url = 'https://cdn.worldvectorlogo.com/logos/dribbble-icon-1.svg';
+function simpay_custom_legacy_modal_logo() {
+	global $logo_url;
 
-	echo '<img src="' . esc_url( $image_url ) . '" alt="" class="simpay-modal-image" />';
+	echo '<img src="' . esc_url( $logo_url ) . '" alt="" class="simpay-modal-image" />';
 }
-add_action( 'simpay_form_157_before_payment_form', 'simpay_custom_form_157_overlay_logo', 20 );
+add_action( 'simpay_form_' . $form_id . '_before_payment_form', 'simpay_custom_legacy_modal_logo', 20 );
 
 /**
  * Adds CSS for overlay.
