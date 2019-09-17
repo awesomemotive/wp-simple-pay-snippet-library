@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Failure Page URLs
+ * Plugin Name: WP Simple Pay - Failure Page URL
  * Plugin URI: https://wpsimplepay.com
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
