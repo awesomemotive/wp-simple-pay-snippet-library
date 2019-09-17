@@ -9,7 +9,7 @@
  */
 
 /**
- * Adds a percent fee to a specific one-time payment form in addition taxes.
+ * Adds a percent fee in addition to taxes to form 157.
  *
  * Replace 157 with the form ID to target.
  *
