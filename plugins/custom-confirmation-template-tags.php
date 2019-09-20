@@ -15,7 +15,11 @@
  * @return array
  */
 function simpay_custom_template_tags( $tags ) {
+	// "Name on Card" field that appears on Stripe Checkout.
 	$tags[] = 'name-on-card';
+
+	// "Name" field that appears on Embed/Overlay forms.
+	$tags[] = 'full-name';
 
 	return $tags;
 }
@@ -48,3 +52,22 @@ function simpay_custom_template_tag_name_on_card( $value, $payment_confirmation_
 	return $card->billing_details->name;
 }
 add_filter( 'simpay_payment_confirmation_template_tag_name-on-card', 'simpay_custom_template_tag_name_on_card', 10, 2 );
+
+/**
+ * Replaces the {full-name} template tag with the name of the Customer.
+ *
+ * @param string $value Template tag value.
+ * @param array  $payment_confirmation_data {
+ *   Contextual information about this payment confirmation.
+ *
+ *   @type \Stripe\Customer               $customer Stripe Customer
+ *   @type \SimplePay\Core\Abstracts\Form $form Payment form.
+ *   @type object                         $subscriptions Subscriptions associated with the Customer.
+ *   @type object                         $paymentintents PaymentIntents associated with the Customer.
+ * }
+ * @return string
+ */
+function simpay_custom_template_tag_full_name( $value, $payment_confirmation_data ) {
+	return $payment_confirmation_data['customer']->name;
+}
+add_filter( 'simpay_payment_confirmation_template_tag_full-name', 'simpay_custom_template_tag_full_name', 10, 2 );
