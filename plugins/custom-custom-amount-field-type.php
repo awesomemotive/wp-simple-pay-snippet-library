@@ -14,7 +14,7 @@
  * @param string $input_type Input type.
  * @return string
  */
-function simpay_set_custom_amount_field_type( $input_Type ) {
+function simpay_set_custom_amount_field_type( $input_type ) {
 	return 'number';
 }
 add_filter( 'simpay_custom_amount_field_type', 'simpay_set_custom_amount_field_type' );
