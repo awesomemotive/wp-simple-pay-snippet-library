@@ -19,7 +19,7 @@ function simpay_custom_create_user( $event, $object ) {
 
 	// Don't create duplicate records.
 	if ( false !== username_exists( $email_address ) ) {
-		return;
+		throw new \Exception( 'Email address already exists.' );
 	}
 
 	// Creates a new user and notifies both the user and the site admin.
@@ -31,7 +31,12 @@ function simpay_custom_create_user( $event, $object ) {
 		'user_login' => $email_address,
 		'nickname'   => $email_address,
 		'role'       => 'subscriber',
+		'user_pass'  => null,
 	) );
+
+	if ( is_wp_error( $user_id ) ) {
+		throw new \Exception( $user_id->get_error_message() );
+	}
 
 	wp_new_user_notification( $user_id, null, 'both' );
 }
