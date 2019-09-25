@@ -9,11 +9,11 @@
  */
 
 /**
-	* Adds handling for `payment_method.attached` webhook.
-	*
-	* @param array $webhooks Registered webhooks.
-	* @return array
-	*/
+ * Adds handling for `payment_method.attached` webhook.
+ *
+ * @param array $webhooks Registered webhooks.
+ * @return array
+ */
 function simpay_custom_webhooks_get_event_whitelist( $webhooks ) {
 	$webhooks['payment_method.attached'] = '\Custom_Payment_Method_Attached_Webhook';
 
@@ -22,7 +22,7 @@ function simpay_custom_webhooks_get_event_whitelist( $webhooks ) {
 add_filter( 'simpay_webhooks_get_event_whitelist', 'simpay_custom_webhooks_get_event_whitelist' );
 
 // Wait until WP Simple Pay is loaded.
-add_action( 'plugins_loaded', function() {
+add_action( 'init', function() {
 
 	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-base.php' );
 	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-interface.php' );
