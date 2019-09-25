@@ -80,6 +80,14 @@ function simpay_custom_enqueue_scripts() {
 	margin-top: 40px;
 }
 
+.simpay-modal .simpay-checkout-form.simpay-checkout-form--overlay .simpay-address-container .simpay-field-wrap {
+	margin-bottom: 0;
+}
+
+.simpay-modal .simpay-checkout-form.simpay-checkout-form--overlay .simpay-label-wrap {
+	display: none;
+}
+
 .simpay-modal .simpay-form-control:not(:last-child) {
 	margin-bottom: -1px;
 }
