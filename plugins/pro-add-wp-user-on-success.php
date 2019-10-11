@@ -11,6 +11,9 @@
 /**
  * Creates a new WordPress user when a Subscription or PaymentIntent are created.
  *
+ * Note: Requires Webhooks.
+ * @link https://docs.wpsimplepay.com/articles/webhooks/
+ *
  * @param \Stripe\Event                              $event Stripe Event.
  * @param \Stripe\Subscription|\Stripe\PaymentIntent $object Stripe Subscription or PaymentIntent
  */
