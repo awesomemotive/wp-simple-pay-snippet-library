@@ -9,7 +9,7 @@
  */
 
 // Wait until WP Simple Pay is loaded.
-add_action( 'plugins_loaded', function() {
+add_action( 'init', function() {
 
 	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-base.php' );
 	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-interface.php' );
