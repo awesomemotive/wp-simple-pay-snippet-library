@@ -9,14 +9,14 @@
  */
 
 /**
- * Changes the currency to EUR for form 157.
+ * Changes the amount the form will charge.
  *
  * Replace 157 with the form ID to target.
  *
- * @param string $currency Currency.
+ * @param string $amount Amount set from the form settings.
  * @return string
  */
-function simpay_custom_form_157_amount( $currency ) {
+function simpay_custom_form_157_amount( $amount ) {
 	return '123.25';
 }
 add_filter( 'simpay_form_157_amount', 'simpay_custom_form_157_amount' );
