@@ -53,3 +53,52 @@ function simpay_form_157_secret_key( $key ) {
 	return $key;
 }
 add_filter( 'simpay_form_157_secret_key', 'simpay_form_157_secret_key' );
+
+/**
+ * Attach the existing form to the payment confirmation URL so it can be retrieved later.
+ *
+ * @param string $url Redirect URL.
+ * @param int $form_id Current form ID.
+ */
+function simpay_form_157_payment_success_page( $url, $form_id ) {
+	return add_query_arg(
+		'form_id',
+		$form_id,
+		$url
+	);
+}
+add_filter( 'simpay_form_157_payment_success_page', 'simpay_form_157_payment_success_page', 10, 2 );
+
+/**
+ * Stub in support for legacy use of $simpay_form in simpay_get_publishable_key().
+ *
+ * Replace 157 with the ID of your form.
+ */
+add_action( 'init', function() {
+	if ( ! isset( $_GET['form_id'] ) ) {
+		return;
+	}
+
+	global $simpay_form;
+
+	$form_id = absint( $_GET['form_id'] );
+
+	$simpay_form     = new \stdClass();
+	$simpay_form->id = $form_id;
+
+	if ( 157 === $form_id ) {
+
+		// We are in test mode so we set the new test mode publishable key.
+		if ( simpay_is_test_mode() ) {
+			$simpay_form->publishable_key = 'pk_test_123456789';
+			$simpay_form->secret_key = 'sk_test_123456789';
+
+		// We are in live mode so we set the new live mode publishable key.
+		} else {
+			$simpay_form->publishable_key = 'pk_live_987654321';
+			$simpay_form->secret_key = 'sk_live_987654321';
+		}
+		
+	}
+
+} );
