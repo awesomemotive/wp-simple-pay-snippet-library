@@ -4,12 +4,12 @@
  * Plugin URI: https://wpsimplepay.com
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
- * Description: Create a WordPress user account after a successful purchase.
+ * Description: Email customer after a successful purchase.
  * Version: 1.0
  */
 
 /**
- * Creates a new WordPress user when a Subscription or PaymentIntent are created.
+ * Email the customer when a Subscription or PaymentIntent is created.
  *
  * Note: Requires Webhooks.
  * @link https://docs.wpsimplepay.com/articles/webhooks/
@@ -54,7 +54,7 @@ function simpay_custom_email_customer( $event, $object ) {
 		$amount = $object->charges->data[0]->amount;
 
 		$body = sprintf(
-			'Thank you for your %1$s payment to start your subscription of %2$s',
+			'Thank you for your %1$s payment for %2$s',
 			simpay_format_currency( simpay_convert_amount_to_dollars( $amount ) ),
 			$description
 		);
