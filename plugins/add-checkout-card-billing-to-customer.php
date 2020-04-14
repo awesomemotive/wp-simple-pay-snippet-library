@@ -5,48 +5,34 @@
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
  * Description: Maps the billing address collected in Stripe Checkout to the Customer object.
- * Version: 1.0
+ * Version: 2.0
  */
-
-/**
- * Adds handling for `payment_method.attached` webhook.
- *
- * @param array $webhooks Registered webhooks.
- * @return array
- */
-function simpay_custom_webhooks_get_event_whitelist( $webhooks ) {
-	$webhooks['payment_method.attached'] = '\Custom_Payment_Method_Attached_Webhook';
-
-	return $webhooks;
-}
-add_filter( 'simpay_webhooks_get_event_whitelist', 'simpay_custom_webhooks_get_event_whitelist' );
 
 // Wait until WP Simple Pay is loaded.
-add_action( 'init', function() {
+add_action( 'simpay_webhook_checkout_session_completed', function( $event, $customer ) {
+	$payment_methods = \SimplePay\Core\Payments\Stripe_API::request(
+		'PaymentMethod',
+		'all',
+		array(
+			'type'     => 'card',
+			'customer' => $customer->id,
+		)
+	);
 
-	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-base.php' );
-	require_once( SIMPLE_PAY_INC . 'pro/webhooks/class-webhook-interface.php' );
+	$payment_method = current( $payment_methods->data );
 
-	/**
-	 * Callback for `payment_method.attached` webook.
-	 */
-	class Custom_Payment_Method_Attached_Webhook extends SimplePay\Pro\Webhooks\Webhook_Base implements SimplePay\Pro\Webhooks\Webhook_Interface {
+	$address = $payment_method->billing_details->address->toArray();
+	$name    = $payment_method->billing_details->name;
+	$phone   = $payment_method->billing_details->phone;
 
-		/**
-		 * Handle the Webhook's data.
-		 */
-		public function handle() {
-			$object  = $this->event->data->object;
-			$address = $object->billing_details->address->__toArray();
-			$name    = $object->billing_details->name;
-			$phone   = $object->billing_details->phone;
-
-			return \SimplePay\Core\Payments\Stripe_API::request( 'Customer', 'update', $object->customer, array(
-				'name'    => $name,
-				'address' => $address,
-				'phone'   => $phone,
-			) );
-		}
-	}
-
-} );
+	return \SimplePay\Core\Payments\Stripe_API::request(
+		'Customer',
+		'update',
+		$customer->id,
+		array(
+			'name'    => $name,
+			'address' => $address,
+			'phone'   => $phone,
+		)
+	);
+}, 10, 2 );
