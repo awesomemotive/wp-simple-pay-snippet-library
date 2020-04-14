@@ -7,8 +7,6 @@
  * Description: Maps the billing address collected in Stripe Checkout to the Customer object.
  * Version: 2.0
  */
-
-// Wait until WP Simple Pay is loaded.
 add_action( 'simpay_webhook_checkout_session_completed', function( $event, $customer ) {
 	$payment_methods = \SimplePay\Core\Payments\Stripe_API::request(
 		'PaymentMethod',
