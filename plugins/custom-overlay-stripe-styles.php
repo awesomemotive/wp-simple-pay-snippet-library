@@ -47,7 +47,7 @@ function simpay_custom_enqueue_scripts() {
 .simpay-modal__content:after {
 	content: '';
 	width: 100%;
-	height: 95px;
+	height: 100px;
 	background: #e8e9eb;
 	border-bottom: 1px solid #dbdcde;
 	box-shadow: 0 1px 0 0 #fff;
@@ -66,7 +66,7 @@ function simpay_custom_enqueue_scripts() {
 }
 
 .simpay-modal .simpay-form-title {
-	margin-bottom: 5px;
+	margin-bottom: 0;
 	font-size: 18px;
 }
 
@@ -121,7 +121,7 @@ function simpay_custom_enqueue_scripts() {
 }
 
 .simpay-modal .simpay-form-control.simpay-checkout-btn-container {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 body .simpay-modal .simpay-form-control.simpay-checkout-btn-container .simpay-checkout-btn:not(.stripe-button-el) {
@@ -172,7 +172,7 @@ body .simpay-modal .simpay-form-control.simpay-checkout-btn-container .simpay-ch
 }
 
 .simpay-modal .simpay-test-mode-badge-container {
-	margin-top: 28px;
+	margin-top: 0px;
 }
 </style>
 <?php
