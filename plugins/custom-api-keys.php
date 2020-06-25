@@ -55,21 +55,6 @@ function simpay_form_157_secret_key( $key ) {
 add_filter( 'simpay_form_157_secret_key', 'simpay_form_157_secret_key' );
 
 /**
- * Attach the existing form to the payment confirmation URL so it can be retrieved later.
- *
- * @param string $url Redirect URL.
- * @param int $form_id Current form ID.
- */
-function simpay_form_157_payment_success_page( $url, $form_id ) {
-	return add_query_arg(
-		'form_id',
-		$form_id,
-		$url
-	);
-}
-add_filter( 'simpay_form_157_payment_success_page', 'simpay_form_157_payment_success_page', 10, 2 );
-
-/**
  * Stub in support for legacy use of $simpay_form in simpay_get_publishable_key().
  *
  * Replace 157 with the ID of your form.
