@@ -19,6 +19,7 @@
  * @return array
  */
 add_filter( 'simpay_get_localized_error_list', function( $messages ) {
+	// https://stripe.com/docs/error-codes#coupon-expired
 	$messages['coupon_expired'] = 'The coupon has expired and is no longer valid';
  
 	return $messages;
