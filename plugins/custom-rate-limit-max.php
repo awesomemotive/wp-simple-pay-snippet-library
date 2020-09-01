@@ -13,6 +13,9 @@
  *
  * Default number of requests is 30 (~10 payments/hour per IP address)
  * Increase limit to 60 (~20 payments/hour per IP address)
+ *
+ * A full payment flow can take ~3-4 requests so the limit should likely
+ * never be below 5.
  */
 function simpay_custom_rate_limiting_max_rate_count() {
   return 60;
