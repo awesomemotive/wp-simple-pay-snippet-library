@@ -14,7 +14,7 @@
  *
  * Replace 157 with the form ID to target.
  *
- * @param string $amount Amount set from the form settings.
+ * @param string $default_amount Default amount set from the form settings.
  * @return string
  */
 add_filter( 'simpay_form_157__default_amount', function( $default_amount ) {
