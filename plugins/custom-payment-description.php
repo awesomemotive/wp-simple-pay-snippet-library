@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Simple Pay - Custom Item Description
+ * Plugin Name: WP Simple Pay - Custom Payment Description
  * Plugin URI: https://wpsimplepay.com
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
