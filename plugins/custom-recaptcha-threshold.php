@@ -13,10 +13,10 @@
  *
  * @link https://developers.google.com/recaptcha/docs/v3
  *
- * @param string $treshold Threshold. 0-1. Default 0.5
+ * @param string $threshold Threshold. 0-1. Default 0.5
  * @return string
  */
 function custom_threshold( $threshold ) {
-	return '0.7';
+	return '0.3';
 }
 add_filter( 'simpay_recpatcha_minimum_score', __NAMESPACE__ . '\\custom_threshold' );
