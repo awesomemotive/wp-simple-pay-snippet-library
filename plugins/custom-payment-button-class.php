@@ -9,15 +9,17 @@
  */
 
 /**
- * Adds the class `my-button-class` to Payment Buttons.
+ * Adds the class `my-button-class-1` and `my-button-class-2` to Payment Buttons.
+ *
+ * "Payment Button" refers to the button that launches an Overlay or Stripe Checkout
+ * Payment Form.
  *
  * @param array $classes List of class names.
  * @return array
  */
-function simpay_custom_add_payment_button_class( $classes ) {
-	$classes['my-button-class-1'];
-	$classes['my-button-class-2'];
+add_filter( 'simpay_payment_button_class', function( $classes ) {
+	$classes[] = 'my-button-class-1';
+	$classes[] = 'my-button-class-2';
 
 	return $classes;
-}
-add_filter( 'simpay_payment_button_class', 'simpay_custom_add_payment_button_class' );
+} );
