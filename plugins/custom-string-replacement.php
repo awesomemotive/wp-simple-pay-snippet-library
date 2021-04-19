@@ -5,11 +5,22 @@
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
  * Description: Custom string translations.
- * Version: 1.0
+ * Version: 1.1
+ */
+
+/**
+ * A popular plugin "Say What" can also be used to replace strings.
+ *
+ * https://wordpress.org/plugins/say-what/
+ *
+ * - Text domain should be simple-pay
+ * - All strings are case-sensitive
  */
 
 /**
  * Replaces "Apply" and "remove" strings with more specific strings.
+ *
+ * All strings are case-sensitive based and may appear differently through CSS.
  *
  * @link https://codex.wordpress.org/Plugin_API/Filter_Reference/gettext
  *
