@@ -46,8 +46,9 @@ add_filter(
 			case 57:
 				return simpay_find_tax_rate( 12, $tax_rates );
 				break;
+			// Return no rates for all other Payment Forms.
 			default:
-				return $tax_rates;
+				return array();
 		}
 	},
 	10,
