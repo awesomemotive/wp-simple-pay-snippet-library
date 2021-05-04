@@ -5,7 +5,7 @@
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
  * Description: Override the returned tax rate for a given Payment Form.
- * Version: 2.0
+ * Version: 2.1
  */
 
 /**
@@ -19,11 +19,13 @@
  * @param \SimplePay\Pro\Taxes\TaxRate[] $tax_rates Tax Rates
  */
 function simpay_find_tax_rate( $percentage, $tax_rates ) {
-	return array_filter(
-		$tax_rates,
-		function ( $tax_rate ) use ( $percentage ) {
-			return $tax_rate->percentage == $percentage;
-		}
+	return array_values(
+		array_filter(
+			$tax_rates,
+			function ( $tax_rate ) use ( $percentage ) {
+				return $tax_rate->percentage == $percentage;
+			}
+		)
 	);
 }
 
