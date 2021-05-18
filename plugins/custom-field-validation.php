@@ -10,9 +10,11 @@
 add_action(
 	'simpay_before_customer_from_payment_form_request',
 	function( $args, $form, $form_data, $form_values ) {
+		// Retrieve value of field with "Stripe Metadata Label" of "Invoice Number"
 		$field = $form_values['simpay_field']['Invoice Number'];
 
-		// Field value must be "123". Adjust for your own validation.
+		// Field value must be "123".
+		// Adjust for your own validation.
 		if ( '123' !== $field ) {
 			throw new \Exception(
 				'Value of "Invoice Number" must be 123'
