@@ -10,7 +10,7 @@
 add_action(
 	'simpay_before_customer_from_payment_form_request',
 	function( $args, $form, $form_data, $form_values ) {
-		$field = $form_values['Invoice Number'];
+		$field = $form_values['simpay_field']['Invoice Number'];
 
 		// Field value must be "123". Adjust for your own validation.
 		if ( '123' !== $field ) {
