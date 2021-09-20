@@ -8,17 +8,7 @@
  * Version: 1.0
  */
 
-/**
- * Adds a percent fee in addition to taxes to form 157.
- *
- * Replace 157 with the form ID to target.
- *
- * Note: Does not work for subscription charges.
- *
- * @return float
- */
-function simpay_custom_form_157_fee_percent() {
-	// This will be an additional 7.5% to the total price.
-	return 7.5;
-}
-add_filter( 'simpay_form_157_fee_percent', 'simpay_custom_form_157_fee_percent' );
+// Additional fee percentages should be added as tax rates in "Settings > General > Taxes".
+//
+// Tax rates can be limited to specific payment forms using the following code:
+// https://github.com/wpsimplepay/wp-simple-pay-snippet-library/blob/master/plugins/custom-tax-percent.php
