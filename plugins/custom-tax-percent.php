@@ -29,7 +29,7 @@ function simpay_find_tax_rate( $percentage, $tax_rates ) {
 	);
 }
 
-// Filter a Payment Form's prices.
+// Filter a Payment Form's tax rates.
 add_filter(
 	'simpay_get_payment_form_tax_rates',
 	/**
