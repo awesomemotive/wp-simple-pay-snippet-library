@@ -49,3 +49,45 @@ add_filter( 'simpay_form_157_secret_key', function( $key ) {
 
 	return $key;
 } );
+
+/**
+ * DO NOT MODIFY.
+ * 
+ * Clear associated Stripe Product information if it cannot be found via the filtered
+ * API keys. If the form was created with unfiltered API keys the Stripe Product/Price
+ * objects need to be recreated, which this allows.
+ */
+add_action(
+	'admin_init',
+	function() {
+		if ( ! isset( $_GET['post'] ) ) {
+			return;
+		}
+
+		$form = simpay_get_form( absint( $_GET['post'] ) );
+
+		if ( false === $form ) {
+			return;
+		}
+
+		$linked_product_key = $form->is_livemode()
+			? '_simpay_product_live'
+			: '_simpay_product_test';
+
+		$linked_prices_key = $form->is_livemode()
+			? '_simpay_product_live'
+			: '_simpay_product_test';
+
+		$product_id = get_post_meta( $form->id, $linked_product_key, true );
+
+		try {
+			\SimplePay\Core\API\Products\retrieve(
+				$product_id,
+				$form->get_api_request_args()
+			);
+		} catch ( \Exception $e ) {
+			delete_post_meta( $form->id, $linked_product_key );
+			delete_post_meta( $form->id, $linked_prices_key );
+		}
+	}
+);
