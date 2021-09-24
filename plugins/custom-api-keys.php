@@ -75,8 +75,8 @@ add_action(
 			: '_simpay_product_test';
 
 		$linked_prices_key = $form->is_livemode()
-			? '_simpay_product_live'
-			: '_simpay_product_test';
+			? '_simpay_prices_live'
+			: '_simpay_prices_test';
 
 		$product_id = get_post_meta( $form->id, $linked_product_key, true );
 
