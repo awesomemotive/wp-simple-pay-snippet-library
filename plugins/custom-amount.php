@@ -5,7 +5,7 @@
  * Author: Sandhills Development, LLC
  * Author URI: https://sandhillsdev.com
  * Description: Use a different amount for a specific form.
- * Version: 1.0
+ * Version: 2.0
  */
 
 /**
