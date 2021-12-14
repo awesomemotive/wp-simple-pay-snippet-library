@@ -1,3 +1,4 @@
+<?php
 /**
  * Plugin Name: WP Simple Pay - Use Payment Form Description as Payment Description
  * Plugin URI: https://wpsimplepay.com
