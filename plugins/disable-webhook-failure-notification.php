@@ -2,9 +2,9 @@
 /**
  * Plugin Name: WP Simple Pay - Disable Webhook Failed Notification
  * Plugin URI: https://wpsimplepay.com
- * Author: Sandhills Development, LLC
- * Author URI: https://sandhillsdev.com
- * Description: Add a page to exclude from caching.
+ * Author: WP Simple Pay
+ * Author URI: https://wpsimplepay.com
+ * Description: Disable alert bubbles when webhook events are not received.
  * Version: 1.0
  */
 
