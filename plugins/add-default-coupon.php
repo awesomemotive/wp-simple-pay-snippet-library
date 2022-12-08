@@ -14,7 +14,19 @@
  * Replace 157 with the form ID to target.
  * Replace 44off with the ID of your coupon.
  */
-function simpay_custom_add_default_coupon() {
+/**
+ * Adds and applies a coupon to a form.
+ *
+ * Replace 157 with the form ID to target.
+ * Replace 44off with the ID of your coupon.
+ */
+add_action( 'wp_enqueue_scripts',  function() {
+	static $rendered = false;
+
+	if ( true === $rendered ) {
+		return;
+	}
+
 	$form_id = 157;
 	$coupon  = '44off';
 
@@ -24,9 +36,11 @@ function simpay_custom_add_default_coupon() {
 			if ( {$form_id} !== formData.formId ) {
 				return;
 			}
+
 			spFormElem.find( '.simpay-coupon-field' ).val( '{$coupon}' );
 			spFormElem.find( '.simpay-apply-coupon' ).trigger( 'click' );
-		} );"	
+		} );"
 	);
-}
-add_action( 'wp_enqueue_scripts', 'simpay_custom_add_default_coupon', 20 );
+
+	$rendered = true;
+} );
