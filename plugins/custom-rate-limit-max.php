@@ -13,6 +13,8 @@
  *
  * The default number of requests is 18.
  * Each payment requires 2-4 requests depending on the form type.
+ *
+ * Updates to allow 30 requests per identifier.
  */
 add_filter(
 	'simpay_rate_limiting_max_rate_count',
@@ -25,6 +27,8 @@ add_filter(
  * Optional: Changes the default rate limit window.
  *
  * By default users must wait 2.5 hours to make another request.
+ *
+ * Updates the timeframe window to 12 hours.
  */
 add_filter(
 	'simpay_rate_limiting_timeout',
@@ -41,7 +45,7 @@ add_filter(
  *
  * Only recommmended if "WP Simple Pay > Settings > Anti-Spam > Require User Authentication" is enabled.
  *
- * Use the current user's ID.
+ * Updates the rate limit identifier to use the user ID if available.
  */
 add_filter(
 	'simpay_rate_limiting_id',
