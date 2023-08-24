@@ -18,9 +18,7 @@
  * @return string
  */
 function custom_default_value_157_123( $default ) {
-    // Set the default value to the current page title.
-    $value = get_the_title();
-    
-    return $value;
+	// Set the default value to the value of the current page's _my_custom_field metadata value.
+	return get_post_meta( get_the_ID(), '_my_custom_field', true );
 };
 add_filter( 'simpay_form_157_field_123_default_value', __NAMESPACE__ . '\\custom_default_value_157_123' );
