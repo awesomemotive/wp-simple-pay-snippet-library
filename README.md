@@ -1,12 +1,7 @@
-# WP Simple Pay Pro Code Snippet Library
+# WP Simple Pay ❤️ WPCode
 
-> **Warning**<br>
-> Custom code snippets are provided as-is and there is no guarantee they will continue to work across multiple versions of WP Simple Pay.
+[WPCode](https://wpcode.com/) allows you to install WP Simple Pay code snippets to customize your payment flows with a single click. [Add WPCocde for free &rarr;](https://wordpress.org/plugins/insert-headers-and-footers/)
 
-## Plugins
+---
 
-Ready-to-install plugin examples to alter the functionality of WP Simple Pay.
-
-[View all](https://github.com/wpsimplepay/WP-Simple-Pay-Snippet-Library/tree/master/plugins)
-
-From there, simply follow the [Beginner’s Guide to Pasting Snippets from the Web into WordPress](https://www.wpbeginner.com/beginners-guide/beginners-guide-to-pasting-snippets-from-the-web-into-wordpress/) from WPBeginner.
+This repository is no longer used or maintained, and previously referenced snippets shoudl not be used. 
