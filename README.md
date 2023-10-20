@@ -6,4 +6,4 @@
 
 ---
 
-This repository is no longer used or maintained and previously referenced snippets should not be used. 
+This repository is no longer used or maintained. Please refer to the [WPCode snippet library](https://library.wpcode.com/profile/wpsimplepay/) for the latest version of all snippets.
