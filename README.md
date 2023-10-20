@@ -6,4 +6,4 @@
 
 ---
 
-This repository is no longer used or maintained, and previously referenced snippets shoudl not be used. 
+This repository is no longer used or maintained and previously referenced snippets should not be used. 
